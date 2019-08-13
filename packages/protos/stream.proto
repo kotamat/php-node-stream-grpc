@@ -1,0 +1,15 @@
+syntax = "proto3";
+package stream;
+
+service ImageApp {
+    rpc getImage (BaseParam) returns (stream Image);
+}
+
+message BaseParam {
+    string name = 1;
+    int32 age = 2;
+}
+
+message Image {
+    bytes image = 1;
+}
